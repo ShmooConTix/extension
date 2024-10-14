@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "ShmooCon Ticket Bot",
+  "description": "Sends riddle answers to ShmooCon Ticket Clients",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/icon32.jpg"
+  },
+  "icons": {
+    "32": "images/icon32.jpg"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
