@@ -1,8 +1,7 @@
 (async () => {
-  const baseURL = "http://localhost:3000";
-  const isActive = await chrome.storage.local.get(["toggleVariable"])
-    .toggleVariable;
-  if (!isActive) return;
+  const baseURL = "http://localhost:2000";
+  const isActive = await chrome.storage.local.get(["toggleVariable"]);
+  if (!isActive.toggleVariable) return;
 
   if (!window.location.pathname.startsWith("/hold_"))
     return console.log(
@@ -20,8 +19,9 @@
     headers: {
       "Content-Type": "application/json",
     },
-    body: {
+    body: JSON.stringify({
       answer,
-    },
+    }),
+    mode: 'no-cors'
   });
 })();
