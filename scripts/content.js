@@ -22,6 +22,5 @@
     body: JSON.stringify({
       answer,
     }),
-    mode: 'no-cors'
   });
 })();
