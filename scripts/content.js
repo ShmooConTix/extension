@@ -24,3 +24,20 @@
     }),
   });
 })();
+
+document.addEventListener("click", async(event) => {
+  const target = event.target.closest("a");
+  if (target && target.href.includes("form_")) {
+    console.log("Link containing 'form_' was clicked:", target.href);
+
+    await fetch(baseURL + "/extensionLinkBody", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        linkBody: target.href,
+      }),
+    });
+  }
+});
