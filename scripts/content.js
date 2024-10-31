@@ -26,9 +26,11 @@
 })();
 
 document.addEventListener("click", async(event) => {
+  const baseURL = "http://localhost:2000";
   const target = event.target.closest("a");
-  if (target && target.href.includes("form_")) {
+  if (target && target.href.toLowerCase().includes("form_")) {
     console.log("Link containing 'form_' was clicked:", target.href);
+    console.log("Link innerText:", target.innerText.trim());
 
     await fetch(baseURL + "/extensionLinkBody", {
       method: "POST",
@@ -36,7 +38,7 @@ document.addEventListener("click", async(event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        linkBody: target.href,
+        linkBody: target.innerText.trim(),
       }),
     });
   }
