@@ -13,5 +13,12 @@ This portion of the bot was done as a concept for a human to do a portion of the
 - Clicking the `form_` link to initate the ticket purchase process
 - Extension toggling via HTML popup
 
+## Installation
+1. Clone this repository to your local machine
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" by toggling the switch in the top-right corner
+4. Click "Load unpacked" and select the extension directory
+5. The extension should now appear in your browser toolbar
+
 ## Contributing
 This project / experiment is over and is not open to changes. Please contact me if you have questions.
